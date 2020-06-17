@@ -16,7 +16,7 @@ public class MapperManager {
 				.field("local_nombre", "localNombre")
 				.field("comuna_nombre", "comunaNombre")
 				.field("localidad_nombre", "localidadNombre")
-				.field("vlocal_direccion", "localId")
+				.field("local_direccion", "vlocalDireccion")
 				.field("funcionamiento_hora_apertura", "funcionamientoHoraApertura")
 				.field("funcionamiento_hora_cierre", "funcionamientoHoraCierre")
 				.field("local_telefono", "localTelefono")

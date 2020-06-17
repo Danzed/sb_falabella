@@ -15,6 +15,7 @@ import com.test.falabella.entity.LocalEntity;
 import com.test.falabella.repository.LocalRepository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -51,18 +52,15 @@ public class FalabellaApplication {
 		logger.info("INIT: Consumer API Local");
 		ResponseEntity<Local[]> response = restTemplate.getForEntity(
 				"https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion?id_region=7", Local[].class);
-		
+		logger.info("INIT: Finish Consumer API Local ");
 		MapperManager mapperManager = new MapperManager();		
 		
 		Local[] locales = response.getBody();
-		
-		logger.info("INIT: Finish Consumer API Local ");
-		for(int i=0; i < locales.length; i++)
-		{
-			LocalEntity localEntity = mapperManager.map(locales[0], LocalEntity.class);
-			repository.save(localEntity);
-			logger.info("INIT: Save Entity Local " + localEntity.getId());
-		}
+		logger.info("INIT: Init Save Entity Local Foreach Mapper");
+		Arrays.asList(locales).forEach((x) -> {
+			repository.save(mapperManager.map(x, LocalEntity.class));
+		});
+		logger.info("INIT: Finish Save Entity Local Foreach Mapper");
 		return true;
 
 	}

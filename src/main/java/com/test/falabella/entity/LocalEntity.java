@@ -11,158 +11,166 @@ public class LocalEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String fecha;
-	private String local_id;
-	private String local_nombre;
-	private String comuna_nombre;
-	private String localidad_nombre;
-	private String vlocal_direccion;
-	private String funcionamiento_hora_apertura;
-	private String funcionamiento_hora_cierre;
-	private String local_telefono;
-	private String local_lat;
-	private String local_lng;
-	private String funcionamiento_dia;
-	private String fk_region;
-	private String fk_comuna;
+	private String localId;
+	private String localNombre;
+	private String comunaNombre;
+	private String localidadNombre;
+	private String vlocalDireccion;
+	private String funcionamientoHoraApertura;
+	private String funcionamientoHoraCierre;
+	private String localTelefono;
+	private String localLat;
+	private String localLng;
+	private String funcionamientoDia;
+	private String fkRegion;
+	private String fkComuna;
 
 	protected LocalEntity() {
 	}
+	
+	
 
-	public LocalEntity(Long id, String fecha, String local_id, String local_nombre, String comuna_nombre,
-			String localidad_nombre, String vlocal_direccion, String funcionamiento_hora_apertura,
-			String funcionamiento_hora_cierre, String local_telefono, String local_lat, String local_lng,
-			String funcionamiento_dia, String fk_region, String fk_comuna) {
+	public LocalEntity(Long id, String fecha, String localId, String localNombre, String comunaNombre,
+			String localidadNombre, String vlocalDireccion, String funcionamientoHoraApertura,
+			String funcionamientoHoraCierre, String localTelefono, String localLat, String localLng,
+			String funcionamientoDia, String fkRegion, String fkComuna) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
-		this.local_id = local_id;
-		this.local_nombre = local_nombre;
-		this.comuna_nombre = comuna_nombre;
-		this.localidad_nombre = localidad_nombre;
-		this.vlocal_direccion = vlocal_direccion;
-		this.funcionamiento_hora_apertura = funcionamiento_hora_apertura;
-		this.funcionamiento_hora_cierre = funcionamiento_hora_cierre;
-		this.local_telefono = local_telefono;
-		this.local_lat = local_lat;
-		this.local_lng = local_lng;
-		this.funcionamiento_dia = funcionamiento_dia;
-		this.fk_region = fk_region;
-		this.fk_comuna = fk_comuna;
+		this.localId = localId;
+		this.localNombre = localNombre;
+		this.comunaNombre = comunaNombre;
+		this.localidadNombre = localidadNombre;
+		this.vlocalDireccion = vlocalDireccion;
+		this.funcionamientoHoraApertura = funcionamientoHoraApertura;
+		this.funcionamientoHoraCierre = funcionamientoHoraCierre;
+		this.localTelefono = localTelefono;
+		this.localLat = localLat;
+		this.localLng = localLng;
+		this.funcionamientoDia = funcionamientoDia;
+		this.fkRegion = fkRegion;
+		this.fkComuna = fkComuna;
 	}
 
-	// Getter Methods
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getFecha() {
 		return fecha;
 	}
 
-	public String getLocal_id() {
-		return local_id;
-	}
-
-	public String getLocal_nombre() {
-		return local_nombre;
-	}
-
-	public String getComuna_nombre() {
-		return comuna_nombre;
-	}
-
-	public String getLocalidad_nombre() {
-		return localidad_nombre;
-	}
-
-	public String getVlocal_direccion() {
-		return vlocal_direccion;
-	}
-
-	public String getFuncionamiento_hora_apertura() {
-		return funcionamiento_hora_apertura;
-	}
-
-	public String getFuncionamiento_hora_cierre() {
-		return funcionamiento_hora_cierre;
-	}
-
-	public String getLocal_telefono() {
-		return local_telefono;
-	}
-
-	public String getLocal_lat() {
-		return local_lat;
-	}
-
-	public String getLocal_lng() {
-		return local_lng;
-	}
-
-	public String getFuncionamiento_dia() {
-		return funcionamiento_dia;
-	}
-
-	public String getFk_region() {
-		return fk_region;
-	}
-
-	public String getFk_comuna() {
-		return fk_comuna;
-	}
-
-	// Setter Methods
-
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
-	public void setLocal_id(String local_id) {
-		this.local_id = local_id;
+	public String getLocalId() {
+		return localId;
 	}
 
-	public void setLocal_nombre(String local_nombre) {
-		this.local_nombre = local_nombre;
+	public void setLocalId(String localId) {
+		this.localId = localId;
 	}
 
-	public void setComuna_nombre(String comuna_nombre) {
-		this.comuna_nombre = comuna_nombre;
+	public String getLocalNombre() {
+		return localNombre;
 	}
 
-	public void setLocalidad_nombre(String localidad_nombre) {
-		this.localidad_nombre = localidad_nombre;
+	public void setLocalNombre(String localNombre) {
+		this.localNombre = localNombre;
 	}
 
-	public void setVlocal_direccion(String vlocal_direccion) {
-		this.vlocal_direccion = vlocal_direccion;
+	public String getComunaNombre() {
+		return comunaNombre;
 	}
 
-	public void setFuncionamiento_hora_apertura(String funcionamiento_hora_apertura) {
-		this.funcionamiento_hora_apertura = funcionamiento_hora_apertura;
+	public void setComunaNombre(String comunaNombre) {
+		this.comunaNombre = comunaNombre;
 	}
 
-	public void setFuncionamiento_hora_cierre(String funcionamiento_hora_cierre) {
-		this.funcionamiento_hora_cierre = funcionamiento_hora_cierre;
+	public String getLocalidadNombre() {
+		return localidadNombre;
 	}
 
-	public void setLocal_telefono(String local_telefono) {
-		this.local_telefono = local_telefono;
+	public void setLocalidadNombre(String localidadNombre) {
+		this.localidadNombre = localidadNombre;
 	}
 
-	public void setLocal_lat(String local_lat) {
-		this.local_lat = local_lat;
+	public String getVlocalDireccion() {
+		return vlocalDireccion;
 	}
 
-	public void setLocal_lng(String local_lng) {
-		this.local_lng = local_lng;
+	public void setVlocalDireccion(String vlocalDireccion) {
+		this.vlocalDireccion = vlocalDireccion;
 	}
 
-	public void setFuncionamiento_dia(String funcionamiento_dia) {
-		this.funcionamiento_dia = funcionamiento_dia;
+	public String getFuncionamientoHoraApertura() {
+		return funcionamientoHoraApertura;
 	}
 
-	public void setFk_region(String fk_region) {
-		this.fk_region = fk_region;
+	public void setFuncionamientoHoraApertura(String funcionamientoHoraApertura) {
+		this.funcionamientoHoraApertura = funcionamientoHoraApertura;
 	}
 
-	public void setFk_comuna(String fk_comuna) {
-		this.fk_comuna = fk_comuna;
+	public String getFuncionamientoHoraCierre() {
+		return funcionamientoHoraCierre;
+	}
+
+	public void setFuncionamientoHoraCierre(String funcionamientoHoraCierre) {
+		this.funcionamientoHoraCierre = funcionamientoHoraCierre;
+	}
+
+	public String getLocalTelefono() {
+		return localTelefono;
+	}
+
+	public void setLocalTelefono(String localTelefono) {
+		this.localTelefono = localTelefono;
+	}
+
+	public String getLocalLat() {
+		return localLat;
+	}
+
+	public void setLocalLat(String localLat) {
+		this.localLat = localLat;
+	}
+
+	public String getLocalLng() {
+		return localLng;
+	}
+
+	public void setLocalLng(String localLng) {
+		this.localLng = localLng;
+	}
+
+	public String getFuncionamientoDia() {
+		return funcionamientoDia;
+	}
+
+	public void setFuncionamientoDia(String funcionamientoDia) {
+		this.funcionamientoDia = funcionamientoDia;
+	}
+
+	public String getFkRegion() {
+		return fkRegion;
+	}
+
+	public void setFkRegion(String fkRegion) {
+		this.fkRegion = fkRegion;
+	}
+
+	public String getFkComuna() {
+		return fkComuna;
+	}
+
+	public void setFkComuna(String fkComuna) {
+		this.fkComuna = fkComuna;
 	}
 }

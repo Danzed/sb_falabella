@@ -1,4 +1,4 @@
-package com.test.falabella.api.models;
+package com.test.falabella.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

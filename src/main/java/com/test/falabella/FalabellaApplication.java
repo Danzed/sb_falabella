@@ -1,6 +1,5 @@
 package com.test.falabella;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -11,9 +10,9 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import com.test.falabella.api.LocalRestApi;
-import com.test.falabella.api.models.Local;
+import com.test.falabella.api.model.Local;
 import com.test.falabella.entity.LocalEntity;
+import com.test.falabella.repository.LocalRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,7 +38,7 @@ public class FalabellaApplication {
 	}
 //
 	@Bean
-	public Boolean run(RestTemplate restTemplate) throws Exception {
+	public Boolean run(RestTemplate restTemplate, LocalRepository repository) throws Exception {
 		logger.info("INIT: Init Consumer API Local");
 		
 		logger.info("INIT: Configure MediaType");
@@ -53,12 +52,17 @@ public class FalabellaApplication {
 		ResponseEntity<Local[]> response = restTemplate.getForEntity(
 				"https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion?id_region=7", Local[].class);
 		
-//		MapperManager mapperManager = new MapperManager();		
+		MapperManager mapperManager = new MapperManager();		
 		
 		Local[] locales = response.getBody();
 		
-//		LocalEntity localEntity = mapperManager.map(locales[0], LocalEntity.class);
-//		logger.info("INIT: Finish Consumer API Local " + localEntity.getComuna_nombre());
+		logger.info("INIT: Finish Consumer API Local ");
+		for(int i=0; i < locales.length; i++)
+		{
+			LocalEntity localEntity = mapperManager.map(locales[0], LocalEntity.class);
+			repository.save(localEntity);
+			logger.info("INIT: Save Entity Local " + localEntity.getId());
+		}
 		return true;
 
 	}

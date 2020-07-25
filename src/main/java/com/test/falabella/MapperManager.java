@@ -1,6 +1,6 @@
 package com.test.falabella;
 
-import com.test.falabella.api.model.Local;
+import com.test.falabella.model.Local;
 import com.test.falabella.entity.LocalEntity;
 
 import ma.glasnost.orika.MapperFactory;

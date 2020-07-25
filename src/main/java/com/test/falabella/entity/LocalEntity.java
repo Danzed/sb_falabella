@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
+@Data
 @Entity
 public class LocalEntity {
 	@Id
@@ -26,9 +29,7 @@ public class LocalEntity {
 	private String fkComuna;
 
 	protected LocalEntity() {
-	}
-	
-	
+	}	
 
 	public LocalEntity(Long id, String fecha, String localId, String localNombre, String comunaNombre,
 			String localidadNombre, String vlocalDireccion, String funcionamientoHoraApertura,
@@ -49,128 +50,6 @@ public class LocalEntity {
 		this.localLng = localLng;
 		this.funcionamientoDia = funcionamientoDia;
 		this.fkRegion = fkRegion;
-		this.fkComuna = fkComuna;
-	}
-
-
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
-	public String getLocalId() {
-		return localId;
-	}
-
-	public void setLocalId(String localId) {
-		this.localId = localId;
-	}
-
-	public String getLocalNombre() {
-		return localNombre;
-	}
-
-	public void setLocalNombre(String localNombre) {
-		this.localNombre = localNombre;
-	}
-
-	public String getComunaNombre() {
-		return comunaNombre;
-	}
-
-	public void setComunaNombre(String comunaNombre) {
-		this.comunaNombre = comunaNombre;
-	}
-
-	public String getLocalidadNombre() {
-		return localidadNombre;
-	}
-
-	public void setLocalidadNombre(String localidadNombre) {
-		this.localidadNombre = localidadNombre;
-	}
-
-	public String getVlocalDireccion() {
-		return vlocalDireccion;
-	}
-
-	public void setVlocalDireccion(String vlocalDireccion) {
-		this.vlocalDireccion = vlocalDireccion;
-	}
-
-	public String getFuncionamientoHoraApertura() {
-		return funcionamientoHoraApertura;
-	}
-
-	public void setFuncionamientoHoraApertura(String funcionamientoHoraApertura) {
-		this.funcionamientoHoraApertura = funcionamientoHoraApertura;
-	}
-
-	public String getFuncionamientoHoraCierre() {
-		return funcionamientoHoraCierre;
-	}
-
-	public void setFuncionamientoHoraCierre(String funcionamientoHoraCierre) {
-		this.funcionamientoHoraCierre = funcionamientoHoraCierre;
-	}
-
-	public String getLocalTelefono() {
-		return localTelefono;
-	}
-
-	public void setLocalTelefono(String localTelefono) {
-		this.localTelefono = localTelefono;
-	}
-
-	public String getLocalLat() {
-		return localLat;
-	}
-
-	public void setLocalLat(String localLat) {
-		this.localLat = localLat;
-	}
-
-	public String getLocalLng() {
-		return localLng;
-	}
-
-	public void setLocalLng(String localLng) {
-		this.localLng = localLng;
-	}
-
-	public String getFuncionamientoDia() {
-		return funcionamientoDia;
-	}
-
-	public void setFuncionamientoDia(String funcionamientoDia) {
-		this.funcionamientoDia = funcionamientoDia;
-	}
-
-	public String getFkRegion() {
-		return fkRegion;
-	}
-
-	public void setFkRegion(String fkRegion) {
-		this.fkRegion = fkRegion;
-	}
-
-	public String getFkComuna() {
-		return fkComuna;
-	}
-
-	public void setFkComuna(String fkComuna) {
 		this.fkComuna = fkComuna;
 	}
 }
